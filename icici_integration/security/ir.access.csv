@@ -1,0 +1,21 @@
+id,name,model_id,group_id/id,operation,domain
+config_manager,ICICI config manager,icici.config,icici_integration.group_icici_manager,crud,
+config_endpoint_manager,ICICI config endpoint manager,icici.config.endpoint,icici_integration.group_icici_manager,crud,
+irm_user,ICICI IRM user,icici.irm,icici_integration.group_icici_user,cru,
+irm_manager,ICICI IRM manager,icici.irm,icici_integration.group_icici_manager,crud,
+settled_irm_user,ICICI settled IRM user,icici.settled.irm,icici_integration.group_icici_user,cru,
+settled_irm_manager,ICICI settled IRM manager,icici.settled.irm,icici_integration.group_icici_manager,crud,
+shipping_bill_user,ICICI shipping bill user,icici.shipping.bill,icici_integration.group_icici_user,cru,
+shipping_bill_manager,ICICI shipping bill manager,icici.shipping.bill,icici_integration.group_icici_manager,crud,
+outstanding_remittance_user,ICICI outstanding remittance user,icici.outstanding.remittance,icici_integration.group_icici_user,cru,
+outstanding_remittance_manager,ICICI outstanding remittance manager,icici.outstanding.remittance,icici_integration.group_icici_manager,crud,
+shipping_bill_invoice_user,ICICI shipping bill invoice user,icici.shipping.bill.invoice,icici_integration.group_icici_user,crud,
+fetch_irm_wizard,ICICI fetch irm wizard,icici.fetch.irm.wizard,icici_integration.group_icici_user,crud,
+fetch_settled_wizard,ICICI fetch settled wizard,icici.fetch.settled.wizard,icici_integration.group_icici_user,crud,
+fetch_shipping_wizard,ICICI fetch shipping wizard,icici.fetch.shipping.wizard,icici_integration.group_icici_user,crud,
+fetch_remittance_wizard,ICICI fetch remittance wizard,icici.fetch.remittance.wizard,icici_integration.group_icici_user,crud,
+config_company,ICICI config: company,icici.config,,crud,"[('company_id', 'in', company_ids)]"
+irm_company,ICICI irm: company,icici.irm,,crud,"[('company_id', 'in', company_ids)]"
+settled_irm_company,ICICI settled irm: company,icici.settled.irm,,crud,"[('company_id', 'in', company_ids)]"
+shipping_bill_company,ICICI shipping bill: company,icici.shipping.bill,,crud,"[('company_id', 'in', company_ids)]"
+outstanding_remittance_company,ICICI outstanding remittance: company,icici.outstanding.remittance,,crud,"[('company_id', 'in', company_ids)]"
