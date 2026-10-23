@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_icici_root" name="ICICI Trade" sequence="60"
+              groups="icici_integration.group_icici_user"/>
+
+    <menuitem id="menu_icici_irm" name="IRM List" parent="menu_icici_root"
+              action="action_icici_irm" sequence="10"/>
+    <menuitem id="menu_icici_settled_irm" name="Settled IRM" parent="menu_icici_root"
+              action="action_icici_settled_irm" sequence="20"/>
+    <menuitem id="menu_icici_shipping_bill" name="Outstanding Shipping Bills" parent="menu_icici_root"
+              action="action_icici_shipping_bill" sequence="30"/>
+    <menuitem id="menu_icici_outstanding_remittance" name="Outstanding Remittance" parent="menu_icici_root"
+              action="action_icici_outstanding_remittance" sequence="40"/>
+
+    <menuitem id="menu_icici_fetch" name="Fetch from ICICI" parent="menu_icici_root" sequence="50"/>
+    <menuitem id="menu_icici_fetch_irm" name="IRM List" parent="menu_icici_fetch"
+              action="action_icici_fetch_irm_wizard" sequence="10"/>
+    <menuitem id="menu_icici_fetch_settled" name="Settled IRM" parent="menu_icici_fetch"
+              action="action_icici_fetch_settled_wizard" sequence="20"/>
+    <menuitem id="menu_icici_fetch_shipping" name="Outstanding Shipping Bills" parent="menu_icici_fetch"
+              action="action_icici_fetch_shipping_wizard" sequence="30"/>
+    <menuitem id="menu_icici_fetch_remittance" name="Outstanding Remittance" parent="menu_icici_fetch"
+              action="action_icici_fetch_remittance_wizard" sequence="40"/>
+
+    <menuitem id="menu_icici_configuration" name="Configuration" parent="menu_icici_root"
+              action="action_icici_config" sequence="90" groups="icici_integration.group_icici_manager"/>
+</odoo>

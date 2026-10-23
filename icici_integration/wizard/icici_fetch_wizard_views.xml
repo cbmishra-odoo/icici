@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_icici_fetch_irm_wizard" model="ir.ui.view">
+        <field name="name">icici.fetch.irm.wizard.form</field>
+        <field name="model">icici.fetch.irm.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Fetch IRM List">
+                <group>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                </group>
+                <footer>
+                    <button name="action_fetch" type="object" string="Fetch" class="btn-primary" data-hotkey="q"/>
+                    <button string="Cancel" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_icici_fetch_irm_wizard" model="ir.actions.act_window">
+        <field name="name">Fetch IRM List</field>
+        <field name="res_model">icici.fetch.irm.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="view_icici_fetch_settled_wizard" model="ir.ui.view">
+        <field name="name">icici.fetch.settled.wizard.form</field>
+        <field name="model">icici.fetch.settled.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Fetch Settled IRM">
+                <group>
+                    <field name="irm_ids" widget="many2many_tags"/>
+                    <field name="only_missing" invisible="irm_ids"/>
+                    <field name="extra_refs"/>
+                </group>
+                <footer>
+                    <button name="action_fetch" type="object" string="Fetch" class="btn-primary" data-hotkey="q"/>
+                    <button string="Cancel" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_icici_fetch_settled_wizard" model="ir.actions.act_window">
+        <field name="name">Fetch Settled IRM</field>
+        <field name="res_model">icici.fetch.settled.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="view_icici_fetch_shipping_wizard" model="ir.ui.view">
+        <field name="name">icici.fetch.shipping.wizard.form</field>
+        <field name="model">icici.fetch.shipping.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Fetch Outstanding Shipping Bill List">
+                <group>
+                    <field name="bill_type"/>
+                    <field name="from_bill_date"/>
+                    <field name="to_bill_date"/>
+                </group>
+                <footer>
+                    <button name="action_fetch" type="object" string="Fetch" class="btn-primary" data-hotkey="q"/>
+                    <button string="Cancel" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_icici_fetch_shipping_wizard" model="ir.actions.act_window">
+        <field name="name">Fetch Outstanding Shipping Bills</field>
+        <field name="res_model">icici.fetch.shipping.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="view_icici_fetch_remittance_wizard" model="ir.ui.view">
+        <field name="name">icici.fetch.remittance.wizard.form</field>
+        <field name="model">icici.fetch.remittance.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Fetch Outstanding Remittance">
+                <group>
+                    <field name="user_id"/>
+                    <field name="aggr_id"/>
+                    <field name="urn"/>
+                    <field name="account_no"/>
+                    <field name="customer_id"/>
+                </group>
+                <footer>
+                    <button name="action_fetch" type="object" string="Fetch" class="btn-primary" data-hotkey="q"/>
+                    <button string="Cancel" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_icici_fetch_remittance_wizard" model="ir.actions.act_window">
+        <field name="name">Fetch Outstanding Remittance</field>
+        <field name="res_model">icici.fetch.remittance.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

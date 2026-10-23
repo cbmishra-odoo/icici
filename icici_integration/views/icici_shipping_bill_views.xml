@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_icici_shipping_bill_list" model="ir.ui.view">
+        <field name="name">icici.shipping.bill.list</field>
+        <field name="model">icici.shipping.bill</field>
+        <field name="arch" type="xml">
+            <list create="false">
+                <field name="shipping_bill_no"/>
+                <field name="shipping_date"/>
+                <field name="port_code"/>
+                <field name="shipping_bill_date"/>
+                <field name="due_date"/>
+                <field name="export_agency"/>
+                <field name="detail_fetched"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_icici_shipping_bill_search" model="ir.ui.view">
+        <field name="name">icici.shipping.bill.search</field>
+        <field name="model">icici.shipping.bill</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="shipping_bill_no"/>
+                <field name="shipping_date"/>
+                <field name="port_code"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_icici_shipping_bill_form" model="ir.ui.view">
+        <field name="name">icici.shipping.bill.form</field>
+        <field name="model">icici.shipping.bill</field>
+        <field name="arch" type="xml">
+            <form create="false">
+                <header>
+                    <button name="action_fetch_details" type="object" string="Fetch Details" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="shipping_bill_no"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                        <field name="shipping_bill_no"/>
+                        <field name="port_code"/>
+                        <field name="ie_code"/>
+                        <field name="form_no"/>
+                        <field name="leo_date"/>
+                        <field name="detail_message"/>
+                        </group>
+                        <group>
+                        <field name="shipping_date"/>
+                        <field name="ad_code"/>
+                        <field name="export_agency"/>
+                        <field name="shipping_bill_date"/>
+                        <field name="due_date"/>
+                        <field name="_bill_company_uniq"/>
+                            <field name="last_fetched"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Invoices" name="invoices">
+                            <field name="invoice_ids">
+                                <list>
+                                    <field name="invoice_no"/>
+                                    <field name="invoice_date"/>
+                                    <field name="fob_currency_code"/>
+                                    <field name="export_bill_value"/>
+                                    <field name="export_type"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Details API Response" name="detail_response">
+                            <field name="detail_response"/>
+                        </page>
+                        <page string="API Response" name="api_response">
+                            <field name="raw_response"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_icici_shipping_bill" model="ir.actions.act_window">
+        <field name="name">Outstanding Shipping Bills</field>
+        <field name="res_model">icici.shipping.bill</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

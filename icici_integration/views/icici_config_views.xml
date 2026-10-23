@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_icici_config_form" model="ir.ui.view">
+        <field name="name">icici.config.form</field>
+        <field name="model">icici.config</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group string="Connection">
+                            <field name="name"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="environment" widget="radio"/>
+                            <field name="apikey" password="True"/>
+                            <field name="session_key" password="True"/>
+                            <field name="timeout"/>
+                        </group>
+                        <group string="Corporate">
+                            <field name="corp_id"/>
+                            <field name="ie_code"/>
+                        </group>
+                    </group>
+                    <group string="Outstanding Remittance API defaults">
+                        <group>
+                            <field name="user_id"/>
+                            <field name="aggr_id"/>
+                            <field name="urn"/>
+                        </group>
+                        <group>
+                            <field name="account_no"/>
+                            <field name="customer_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="API URLs" name="urls">
+                            <field name="endpoint_ids">
+                                <list editable="bottom">
+                                    <field name="api_code"/>
+                                    <field name="uat_url"/>
+                                    <field name="prod_url"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_icici_config_list" model="ir.ui.view">
+        <field name="name">icici.config.list</field>
+        <field name="model">icici.config</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="environment"/>
+                <field name="corp_id"/>
+                <field name="ie_code"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_icici_config" model="ir.actions.act_window">
+        <field name="name">Configuration</field>
+        <field name="res_model">icici.config</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
