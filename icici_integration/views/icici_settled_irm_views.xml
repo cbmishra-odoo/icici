@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_icici_settled_irm_list" model="ir.ui.view">
+        <field name="name">icici.settled.irm.list</field>
+        <field name="model">icici.settled.irm</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="remittanceRefNo"/>
+                <field name="remittanceDate"/>
+                <field name="remittanceCurrencyCode"/>
+                <field name="remittanceAmount"/>
+                <field name="utilisedAmount"/>
+                <field name="outstandingAmount"/>
+                <field name="remitterName"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_icici_settled_irm_search" model="ir.ui.view">
+        <field name="name">icici.settled.irm.search</field>
+        <field name="model">icici.settled.irm</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="remittanceRefNo"/>
+                <field name="remittanceDate"/>
+                <field name="remittanceCurrencyCode"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_icici_settled_irm_form" model="ir.ui.view">
+        <field name="name">icici.settled.irm.form</field>
+        <field name="model">icici.settled.irm</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+
+                </header>
+                <sheet>
+
+                    <div class="oe_title">
+                        <h1><field name="remittanceRefNo" placeholder="remittanceRefNo"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="adCodeId"/>
+                            <field name="remittanceDate"/>
+                            <field name="ieCode"/>
+                            <field name="remittanceCurrencyCode"/>
+                            <field name="remitterAddress"/>
+                            <field name="remitterBankName"/>
+                            <field name="purposeOfRemittance"/>
+                            <field name="status"/>
+                            <field name="remittanceType"/>
+                        </group>
+                        <group>
+                            <field name="outstandingAmount"/>
+                            <field name="remittanceAmount"/>
+                            <field name="utilisedAmount"/>
+                            <field name="remitterName"/>
+                            <field name="remitterCountryCode"/>
+                            <field name="swiftOtherBankRefNumber"/>
+                            <field name="expectedUtilizationDate"/>
+                            <field name="remarks"/>
+                            <field name="last_fetched"/>
+                            <field name="irm_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+
+                        <page string="API Response" name="api_response">
+                            <field name="raw_response"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_icici_settled_irm" model="ir.actions.act_window">
+        <field name="name">Settled IRM</field>
+        <field name="res_model">icici.settled.irm</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

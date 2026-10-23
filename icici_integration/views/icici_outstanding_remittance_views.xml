@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_icici_outstanding_remittance_list" model="ir.ui.view">
+        <field name="name">icici.outstanding.remittance.list</field>
+        <field name="model">icici.outstanding.remittance</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="GRSReferenceNo"/>
+                <field name="CreditAdviceValueDate"/>
+                <field name="Currency"/>
+                <field name="Amount"/>
+                <field name="OutstandingAmount"/>
+                <field name="TransactionStatus"/>
+                <field name="OrderingCustomerDetails"/>
+                <field name="IECode"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_icici_outstanding_remittance_search" model="ir.ui.view">
+        <field name="name">icici.outstanding.remittance.search</field>
+        <field name="model">icici.outstanding.remittance</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="GRSReferenceNo"/>
+                <field name="CreditAdviceValueDate"/>
+                <field name="Currency"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_icici_outstanding_remittance_form" model="ir.ui.view">
+        <field name="name">icici.outstanding.remittance.form</field>
+        <field name="model">icici.outstanding.remittance</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+
+                </header>
+                <sheet>
+
+                    <div class="oe_title">
+                        <h1><field name="GRSReferenceNo" placeholder="GRSReferenceNo"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="CustomerID"/>
+                            <field name="IECode"/>
+                            <field name="AuthoriserRemarks"/>
+                            <field name="CreditAdviceValueDate"/>
+                            <field name="Amount"/>
+                            <field name="CreditAdviceNostro"/>
+                            <field name="OrderingCustomerDetails"/>
+                            <field name="SendersCorrespondent"/>
+                            <field name="BeneficiaryCustomerDetails"/>
+                            <field name="AccountWithInstitution"/>
+                            <field name="DealAmount"/>
+                            <field name="ReferenceNumber"/>
+                            <field name="SupplementaryDetails"/>
+                            <field name="InformationToAccountOwner"/>
+                            <field name="AccountDescription"/>
+                            <field name="OutstandingAmount"/>
+                            <field name="HUBBranch"/>
+                            <field name="Remarks"/>
+                            <field name="OrderingCustomerCountry"/>
+                        </group>
+                        <group>
+                            <field name="TransactionType"/>
+                            <field name="TransactionStatus"/>
+                            <field name="SendersReference"/>
+                            <field name="Currency"/>
+                            <field name="USDEquivalent"/>
+                            <field name="OrderingCustomer"/>
+                            <field name="OrderingInstitution"/>
+                            <field name="BeneficiaryCustomer"/>
+                            <field name="RemittanceInformation"/>
+                            <field name="SenderToReceiverInformation"/>
+                            <field name="ServicingInstitutionReference"/>
+                            <field name="ValueDate"/>
+                            <field name="Nostro"/>
+                            <field name="AccountNumber"/>
+                            <field name="BillID"/>
+                            <field name="OtherPartyDetails"/>
+                            <field name="ChargesBorneBy"/>
+                            <field name="OrderingInstitutionCountry"/>
+                            <field name="last_fetched"/>
+
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="CreditAccounts" name="CreditAccounts">
+                            <field name="CreditAccounts">
+                                <list editable="bottom">
+                                    <field name="AccountNo"/>
+                                    <field name="Currency"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="GSTDetails" name="GSTDetails">
+                            <field name="GSTDetails">
+                                <list editable="bottom">
+                                    <field name="GSTNumber"/>
+                                    <field name="GSTType"/>
+                                    <field name="GSTCustAccountNo"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="API Response" name="api_response">
+                            <field name="raw_response"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_icici_outstanding_remittance" model="ir.actions.act_window">
+        <field name="name">Outstanding Remittance</field>
+        <field name="res_model">icici.outstanding.remittance</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
